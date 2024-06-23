@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LAB 4</title>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1>Oiluj Data Solutions</h1>
+            <h2>Modelo de Machine Learning para prever se o cliente fará uma próxima compra</h2>
+            <h3>Digite abaixo o valor das últimas 4 compras do cliente</h3>
+            <form action="/predict" method="post">
+                <input type="text" name="feature1" placeholder="Valor compra 1" required="required" />
+                <input type="text" name="feature2" placeholder="Valor compra 2" required="required" />
+                <input type="text" name="feature3" placeholder="Valor compra 3" required="required" />
+                <input type="text" name="feature4" placeholder="Valor compra 4" required="required" />
+                <button type="submit">Predict</button>
+            </form>
+
+            {% if prediction_text %}
+                <h3>{{ prediction_text }}</h3>
+            {% endif %}
+        </div>
+    </body>
+</html>
